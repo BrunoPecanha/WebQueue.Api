@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using The3BlackBro.WebQueue.Api.Options;
+using Swashbuckle.AspNetCore.Swagger;
 using The3BlackBro.WebQueue.Infra.Context;
 using The3BlackBro.WebQueue.Service;
 
@@ -39,20 +39,41 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
+app.UseHsts();
+
 var swaggerOptions = new SwaggerOptions();
+var _swaggerOp = new The3BlackBro.WebQueue.Api.Options.SwaggerOptions();
 
 app.UseSwaggerUI(options =>
 {
-    options.SwaggerEndpoint(swaggerOptions.UIEndpoint, swaggerOptions.Description);
+    options.SwaggerEndpoint(_swaggerOp.UIEndpoint, _swaggerOp.Description); ;
     options.RoutePrefix = string.Empty;
 });
 
 builder.Configuration.GetSection(nameof(SwaggerOptions)).Bind(swaggerOptions);
 
+
+app.UseRouting();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
+
+app.UseSwagger(options =>
+{
+    options.RouteTemplate = swaggerOptions.RouteTemplate;
+});
+
+app.UseSwaggerUI(options =>
+{
+    options.SwaggerEndpoint(_swaggerOp.UIEndpoint, _swaggerOp.Description);
+    options.RoutePrefix = string.Empty;
+});
 
 app.UseRouting();
 app.UseEndpoints(endpoints =>
