@@ -37,7 +37,7 @@ builder.Services.AddSwaggerGen(x =>
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
     app.UseDeveloperExceptionPage();
     app.UseSwagger();
@@ -69,17 +69,6 @@ app.UseSwagger(options =>
     options.RouteTemplate = swaggerOptions.RouteTemplate;
 });
 
-app.UseSwaggerUI(options =>
-{
-    options.SwaggerEndpoint(_swaggerOp.UIEndpoint, _swaggerOp.Description);
-    options.RoutePrefix = string.Empty;
-});
-
-app.UseRouting();
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllers();
-});
 
 app.UseHttpsRedirection();
 
