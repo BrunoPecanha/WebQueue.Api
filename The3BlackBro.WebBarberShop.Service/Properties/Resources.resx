@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="mAmountNotFound" xml:space="preserve">
+    <value>No amount was found for this company.</value>
+  </data>
+  <data name="mCantDeleteOwnerUser" xml:space="preserve">
+    <value>Can't delete owner user.</value>
+  </data>
+  <data name="mCantDeleteThereIsRelation" xml:space="preserve">
+    <value>The regist could not be deleted, because there's relation between other tables. The regist was marked as "not Activated".</value>
+  </data>
+  <data name="mCompanyNotAssociatedToThisUser" xml:space="preserve">
+    <value>This company is not associated to this user.</value>
+  </data>
+  <data name="mCompanyNotFound" xml:space="preserve">
+    <value>Company was not found.</value>
+  </data>
+  <data name="mCustomerAlreadyInQueue" xml:space="preserve">
+    <value>Customer is already in queue</value>
+  </data>
+  <data name="mCustomerDeleted" xml:space="preserve">
+    <value>Customer was deleted.</value>
+  </data>
+  <data name="mCustomerIsNotInService" xml:space="preserve">
+    <value>Customer is not in service to be finished.</value>
+  </data>
+  <data name="mCustomerNotFound" xml:space="preserve">
+    <value>Customer not found</value>
+  </data>
+  <data name="mEmailAlreadyInUse" xml:space="preserve">
+    <value>This email is already in use.</value>
+  </data>
+  <data name="mErrorInProcess" xml:space="preserve">
+    <value>Erro while processing.</value>
+  </data>
+  <data name="mNoCompanyWasFoundWithId" xml:space="preserve">
+    <value>Can't find company with id {0}</value>
+  </data>
+  <data name="mNoMoreCustomers" xml:space="preserve">
+    <value>No more customers.</value>
+  </data>
+  <data name="mNoOwnerUserWasFound" xml:space="preserve">
+    <value>No owner was found.</value>
+  </data>
+  <data name="mNoPermissionStartQueue" xml:space="preserve">
+    <value>This user doesn't has permission to start a queue.</value>
+  </data>
+  <data name="mNoQueueWasFound" xml:space="preserve">
+    <value>No queu was found with id {0}</value>
+  </data>
+  <data name="mNoServiceWasFound" xml:space="preserve">
+    <value>No service was found</value>
+  </data>
+  <data name="mNoServiceWasFoundForThisCompany" xml:space="preserve">
+    <value>No service was found for this company.</value>
+  </data>
+  <data name="mNoServiceWasFoundForThisCustomer" xml:space="preserve">
+    <value>No service was found for this customer.</value>
+  </data>
+  <data name="mNoUserWasFoundWithId" xml:space="preserve">
+    <value>Can't find user with id {0}</value>
+  </data>
+  <data name="mOk" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="mQueueAlreadyStarted" xml:space="preserve">
+    <value>Queue already  started for {0}.</value>
+  </data>
+  <data name="mQueueCompanyNotAssociatedToUser" xml:space="preserve">
+    <value>The company is not associated to user.</value>
+  </data>
+  <data name="mQueueEnded" xml:space="preserve">
+    <value>Queue for company {0} ended sucessfully</value>
+  </data>
+  <data name="mQueueNotAvailable" xml:space="preserve">
+    <value>The queue is not available.</value>
+  </data>
+  <data name="mQueueStartedSuceed" xml:space="preserve">
+    <value>Queue started suceed for {0}.</value>
+  </data>
+  <data name="mQueueSucessStarted" xml:space="preserve">
+    <value>Queue started sucessfully for company id {0}</value>
+  </data>
+  <data name="mQueueUserNotAuthorized" xml:space="preserve">
+    <value>This user is not allowed to create a queue</value>
+  </data>
+  <data name="mReturnedAllCustomersInQueue" xml:space="preserve">
+    <value>Returned all customers in queue with id {0}</value>
+  </data>
+  <data name="mSucceedCreated" xml:space="preserve">
+    <value>Successfully Created.</value>
+  </data>
+  <data name="mSuceedDeleted" xml:space="preserve">
+    <value>Successfully deleted.</value>
+  </data>
+  <data name="mSuceedUpdated" xml:space="preserve">
+    <value>SuccessfullyUpdated.</value>
+  </data>
+  <data name="mThereNoAmountForToday" xml:space="preserve">
+    <value>There's no open amount today for company id {0}</value>
+  </data>
+  <data name="mUpdateAmount" xml:space="preserve">
+    <value>The amount was updated.</value>
+  </data>
+  <data name="mUserInsertedInQueue" xml:space="preserve">
+    <value>User inserted in queue in {0}.</value>
+  </data>
+  <data name="mUserNotFound" xml:space="preserve">
+    <value>No user was found.</value>
+  </data>
+  <data name="mUserServicesUpdated" xml:space="preserve">
+    <value>User's services updated</value>
+  </data>
+  <data name="mUsersServicesAlreadyDone" xml:space="preserve">
+    <value>User's services are already done</value>
+  </data>
+</root>
