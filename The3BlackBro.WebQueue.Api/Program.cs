@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using The3BlackBro.WebQueue.Api.Options;
@@ -28,6 +28,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.RegisterServices(builder.Configuration.GetConnectionString("DefaultConnection"));
 
+builder.Services.AddSwaggerGen(x =>
+{
+    x.SwaggerDoc("v1", new OpenApiInfo { Title = "Web BarberShopp Api", Version = "v1" });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -42,6 +47,27 @@ var swaggerOptions = new SwaggerOptions();
 app.UseSwaggerUI(options =>
 {
     options.SwaggerEndpoint(swaggerOptions.UIEndpoint, swaggerOptions.Description);
+});
+
+
+
+builder.Configuration.GetSection(nameof(SwaggerOptions)).Bind(swaggerOptions);
+
+//app.UseSwagger(options =>
+//{
+//    options.RouteTemplate = swaggerOptions.JsonRoute;
+//});
+
+app.UseSwaggerUI(options =>
+{
+    options.SwaggerEndpoint(swaggerOptions.UIEndpoint, swaggerOptions.Description);
+    options.RoutePrefix = string.Empty;
+});
+
+app.UseRouting();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
 });
 
 app.UseHttpsRedirection();
