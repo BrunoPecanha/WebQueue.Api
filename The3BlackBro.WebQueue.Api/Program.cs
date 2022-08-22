@@ -41,8 +41,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-
-    app.UseDeveloperExceptionPage();
+ 
     var swaggerOptions = new SwaggerOptions();
 
     app.UseSwaggerUI(options =>
