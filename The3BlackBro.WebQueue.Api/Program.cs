@@ -28,9 +28,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.RegisterServices(builder.Configuration.GetConnectionString("DefaultConnection"));
 
+
 builder.Services.AddSwaggerGen(x =>
 {
-    x.SwaggerDoc("v1", new OpenApiInfo { Title = "Web BarberShopp Api", Version = "v1" });
+    x.SwaggerDoc("v1", new OpenApiInfo { Title = "Web Queue Api", Version = "v1" });
 });
 
 var app = builder.Build();
@@ -40,29 +41,20 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+
+    app.UseDeveloperExceptionPage();
+    var swaggerOptions = new SwaggerOptions();
+
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint(swaggerOptions.UIEndpoint, swaggerOptions.Description);
+        options.RoutePrefix = string.Empty;
+    });
+
+    builder.Configuration.GetSection(nameof(SwaggerOptions)).Bind(swaggerOptions);
+
 }
 
-var swaggerOptions = new SwaggerOptions();
-
-app.UseSwaggerUI(options =>
-{
-    options.SwaggerEndpoint(swaggerOptions.UIEndpoint, swaggerOptions.Description);
-});
-
-
-
-builder.Configuration.GetSection(nameof(SwaggerOptions)).Bind(swaggerOptions);
-
-//app.UseSwagger(options =>
-//{
-//    options.RouteTemplate = swaggerOptions.JsonRoute;
-//});
-
-app.UseSwaggerUI(options =>
-{
-    options.SwaggerEndpoint(swaggerOptions.UIEndpoint, swaggerOptions.Description);
-    options.RoutePrefix = string.Empty;
-});
 
 app.UseRouting();
 app.UseEndpoints(endpoints =>
