@@ -41,22 +41,16 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
     app.UseDeveloperExceptionPage();
     app.UseSwagger();
-    app.UseSwaggerUI();
+    var _swaggerOp = new The3BlackBro.WebQueue.Api.Options.SwaggerOptions();
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint(_swaggerOp.UIEndpoint, _swaggerOp.Description); ;
+        options.RoutePrefix = string.Empty;
+    });
 }
 
-app.UseHsts();
-
 var swaggerOptions = new SwaggerOptions();
-var _swaggerOp = new The3BlackBro.WebQueue.Api.Options.SwaggerOptions();
-
-app.UseSwaggerUI(options =>
-{
-    options.SwaggerEndpoint(_swaggerOp.UIEndpoint, _swaggerOp.Description); ;
-    options.RoutePrefix = string.Empty;
-});
-
 builder.Configuration.GetSection(nameof(SwaggerOptions)).Bind(swaggerOptions);
-
 
 app.UseRouting();
 app.UseEndpoints(endpoints =>
@@ -72,10 +66,12 @@ app.UseSwagger(options =>
 
 app.UseHttpsRedirection();
 
+// Para testes locais
 app.UseCors(x => x.AllowAnyOrigin()
                   .AllowAnyMethod()
                   .AllowAnyHeader());
 
+// Descomentar quando for utilizar autenticação
 //app.UseAuthorization();
 
 app.MapControllers();
