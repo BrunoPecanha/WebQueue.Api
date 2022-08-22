@@ -41,18 +41,17 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
- 
-    var swaggerOptions = new SwaggerOptions();
-
-    app.UseSwaggerUI(options =>
-    {
-        options.SwaggerEndpoint(swaggerOptions.UIEndpoint, swaggerOptions.Description);
-        options.RoutePrefix = string.Empty;
-    });
-
-    builder.Configuration.GetSection(nameof(SwaggerOptions)).Bind(swaggerOptions);
-
 }
+
+var swaggerOptions = new SwaggerOptions();
+
+app.UseSwaggerUI(options =>
+{
+    options.SwaggerEndpoint(swaggerOptions.UIEndpoint, swaggerOptions.Description);
+    options.RoutePrefix = string.Empty;
+});
+
+builder.Configuration.GetSection(nameof(SwaggerOptions)).Bind(swaggerOptions);
 
 
 app.UseRouting();
