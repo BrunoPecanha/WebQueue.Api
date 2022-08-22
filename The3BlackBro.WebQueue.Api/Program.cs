@@ -28,6 +28,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.RegisterServices(builder.Configuration.GetConnectionString("DefaultConnection"));
 
+
 builder.Services.AddSwaggerGen(x =>
 {
     x.SwaggerDoc("v1", new OpenApiInfo { Title = "Web Queue Api", Version = "v1" });
@@ -41,7 +42,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 
-
+    app.UseDeveloperExceptionPage();
     var swaggerOptions = new SwaggerOptions();
 
     app.UseSwaggerUI(options =>
