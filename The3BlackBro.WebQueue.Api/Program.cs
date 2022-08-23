@@ -49,14 +49,7 @@ app.UseHsts();
 var swaggerOptions = new SwaggerOptions();
 var _swaggerOp = new The3BlackBro.WebQueue.Api.Options.SwaggerOptions();
 
-app.UseSwaggerUI(options =>
-{
-    options.SwaggerEndpoint(_swaggerOp.UIEndpoint, _swaggerOp.Description); ;
-    options.RoutePrefix = string.Empty;
-});
-
 builder.Configuration.GetSection(nameof(SwaggerOptions)).Bind(swaggerOptions);
-
 
 app.UseRouting();
 app.UseEndpoints(endpoints =>
